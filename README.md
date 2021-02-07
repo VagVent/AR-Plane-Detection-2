@@ -1,4 +1,4 @@
-# Plane Detection AR
+# AR Plane Detection 2
  
  It is an Android app which can detect planes and display the square meteres of its detected plane.
  
