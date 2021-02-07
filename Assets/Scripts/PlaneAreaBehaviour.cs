@@ -10,10 +10,14 @@ public class PlaneAreaBehaviour : MonoBehaviour
     public TextMeshPro areaText;
     public ARPlane arPlane;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        arPlane.boundaryChanged += ArPlane_BoundaryChanged;
+    }
+
+    private void OnDisable()
+    {
+        arPlane.boundaryChanged -= ArPlane_BoundaryChanged;
     }
 
     // Update is called once per frame

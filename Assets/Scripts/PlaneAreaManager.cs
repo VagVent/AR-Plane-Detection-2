@@ -1,15 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 public class PlaneAreaManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -23,23 +18,21 @@ public class PlaneAreaManager : MonoBehaviour
             {
                 if (Input.touchCount == 1)
                 {
+                    // Debug.Log("Tap detected");
+                    Ray raycast = Camera.main.ScreenPointToRay(touch.position);
 
-                }
-
-                Ray raycast = Camera.main.ScreenPointToRay(touch.position);
-
-                // If the ray hits anything Physics.Raycast will return true.
-                if (Physics.Raycast(raycast, out RaycastHit raycastHit))
-                {
-                    var planeAreaBehaviour = raycastHit.collider.gameObject.GetComponent<PlaneAreaBehaviour>();
-
-                    if (planeAreaBehaviour != null)
+                    // If the ray hits anything Physics.Raycast will return true.
+                    if (Physics.Raycast(raycast, out RaycastHit raycastHit))
                     {
-                        planeAreaBehaviour.ToogleAreaView();
+                        // Debug.Log("Something Hit : " + raycastHit.collider.gameObject.name);
+                        var planeAreaBehaviour = raycastHit.collider.gameObject.GetComponent<PlaneAreaBehaviour>();
+
+                        if (planeAreaBehaviour != null)
+                        {
+                            planeAreaBehaviour.ToogleAreaView();
+                        }
                     }
                 }
-
-
             }
         }
     }
