@@ -30,9 +30,9 @@ public class CubeManager : MonoBehaviour
                     // AR Raycast Planes
                     if (aRRaycastManager.Raycast(touch.position, aRRaycastHits))
                     {
-                        var pose = aRRaycastHits[0].pose;
-                        CreateCube(pose.position);
-                        return;
+                         var pose = aRRaycastHits[0].pose;
+                         CreateCube(pose.position);
+                         return;
                     }
 
                     Ray ray = Camera.main.ScreenPointToRay(touch.position);
