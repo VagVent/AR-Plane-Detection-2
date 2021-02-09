@@ -4,6 +4,7 @@
  
  Made with Unity, AR Foundation and AR Core.
  
- ## Unity
- 
- Unity version 2020.2.0f1.
+ ## Unity 
+ Unity version  2020.2.0f1 <br/>
+ AR Foundation  4.0.10     <br/>
+ AR Core        4.0.10     <br/>
